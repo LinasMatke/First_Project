@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.listen(3000, 'localhost', () => {
+app.listen(8000, 'localhost', () => {
   console.log('Server is running - ok!');
 });
 
@@ -38,37 +38,40 @@ app.post('/sql/auth', async (req, res) => {
   console.log(data);
   res.json({ data });
 });
-app.delete('/sql', async (req, res) => {
-  const { id } = req.query;
-
-  if (!id) {
-    res.send({
-      error: true,
-      stats: {
-        message: 'error',
-      },
-    });
-    return;
-  }
+app.get('/sql/deliveryconditions/', async (req, res) => {
+  const defaultlimit = 60;
+  const limit = Number(req.query.limit) || defaultlimit;
 
   try {
-    const connect = await veterinary.createConnection(veterinaryConfig);
-    const results = await connect.query('DELETE FROM pets WHERE id = ?', [id]);
+    const connect = await eshop.createConnection(eshopConfig);
+    const dbresponse = await connect.query('SELECT * FROM deliveryconditions LIMIT ?', [limit]);
+    console.log(dbresponse[0]);
+    res.send(dbresponse[0]);
+    connect.end();
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send(JSON.stringify(error));
+  }
+});
+app.post('/sql/deliveryconditions', async (req, res) => {
+  console.log(req.body);
+  try {
+    const connect = await eshop.createConnection(eshopConfig);
+    const results = await connect.query('INSERT INTO deliveryconditions (delivery_date, delivery_time, delivery_address, contact_person, contact_phone, additional_information) VALUES (?, ?, ?, ?, ?, ?)', [req.body.delivery_date, req.body.delivery_time, req.body.delivery_address, req.body.contact_person, req.body.contact_phone, req.body.additional_information]);
+
     const databaseResults = results[0];
-    if (databaseResults.effectedRows > 0) {
+
+    console.log(results);
+    if (databaseResults.affectedRows > 0) {
       res.send({
         error: false,
         stats: databaseResults,
       });
     } else {
-      res.send({
-        error: false,
-        message: 'rows_0',
-        stats: databaseResults,
-      });
+      throw Error('No results');
     }
     connect.end();
-    return;
   } catch (error) {
     console.log(error);
     res.send({
@@ -77,13 +80,13 @@ app.delete('/sql', async (req, res) => {
     });
   }
 });
-app.get('/sql/pets/', async (req, res) => {
+app.get('/sql/invoice/', async (req, res) => {
   const defaultlimit = 60;
   const limit = Number(req.query.limit) || defaultlimit;
 
   try {
-    const connect = await veterinary.createConnection(veterinaryConfig);
-    const dbresponse = await connect.query('SELECT * FROM pets LIMIT ?', [limit]);
+    const connect = await eshop.createConnection(eshopConfig);
+    const dbresponse = await connect.query('SELECT * FROM invoice LIMIT ?', [limit]);
     // console.log(dbresponse[0]);
     res.send(dbresponse[0]);
     connect.end();
@@ -93,20 +96,30 @@ app.get('/sql/pets/', async (req, res) => {
     res.send(JSON.stringify(error));
   }
 });
-app.get('/sql/logs/', async (req, res) => {
-  const defaultlimit = 60;
-  const limit = Number(req.query.limit) || defaultlimit;
-
+app.post('/sql/invoice', async (req, res) => {
+  console.log(req.body);
   try {
-    const connect = await veterinary.createConnection(veterinaryConfig);
-    const dbresponse = await connect.query('SELECT * FROM logs LIMIT ?', [limit]);
-    // console.log(dbresponse[0]);
-    res.send(dbresponse[0]);
+    const connect = await eshop.createConnection(eshopConfig);
+    const results = await connect.query('INSERT INTO invoice (invoice_number, invoice_date, invoice_amount, buyer, warehouse_code, description, invoice_status, currency) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [req.body.invoice_number, req.body.invoice_date, req.body.invoice_amount, req.body.buyer, req.body.warehouse_code, req.body.description, req.body.invoice_status, req.body.currency]);
+
+    const databaseResults = results[0];
+
+    console.log(results);
+    if (databaseResults.affectedRows > 0) {
+      res.send({
+        error: false,
+        stats: databaseResults,
+      });
+    } else {
+      throw Error('No results');
+    }
     connect.end();
-    return;
   } catch (error) {
     console.log(error);
-    res.send(JSON.stringify(error));
+    res.send({
+      error: true,
+      stats: error,
+    });
   }
 });
 app.get('/sql/warehouse/', async (req, res) => {
@@ -123,6 +136,116 @@ app.get('/sql/warehouse/', async (req, res) => {
   } catch (error) {
     console.log(error);
     res.send(JSON.stringify(error));
+  }
+});
+app.post('/sql/warehouse', async (req, res) => {
+  console.log(req.body);
+  try {
+    const connect = await eshop.createConnection(eshopConfig);
+    const results = await connect.query('INSERT INTO warehouse (warehouse_code, warehouse_name, warehouse_address, warehouse_ILN ) VALUES (?, ?, ?, ?)', [req.body.warehouse_code, req.body.warehouse_name, req.body.warehouse_address, req.body.warehouse_ILN]);
+
+    const databaseResults = results[0];
+
+    console.log(results);
+    if (databaseResults.affectedRows > 0) {
+      res.send({
+        error: false,
+        stats: databaseResults,
+      });
+    } else {
+      throw Error('No results');
+    }
+    connect.end();
+  } catch (error) {
+    console.log(error);
+    res.send({
+      error: true,
+      stats: error,
+    });
+  }
+});
+app.get('/sql/orders/', async (req, res) => {
+  const defaultlimit = 60;
+  const limit = Number(req.query.limit) || defaultlimit;
+
+  try {
+    const connect = await eshop.createConnection(eshopConfig);
+    const dbresponse = await connect.query('SELECT * FROM orders LIMIT ?', [limit]);
+    // console.log(dbresponse[0]);
+    res.send(dbresponse[0]);
+    connect.end();
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send(JSON.stringify(error));
+  }
+});
+app.post('/sql/orders', async (req, res) => {
+  console.log(req.body);
+  try {
+    const connect = await eshop.createConnection(eshopConfig);
+    const results = await connect.query('INSERT INTO orders (order_owner, order_product, order_amount, order_date, delivery_method, payment_method, order_status) VALUES (?, ?, ?, ?, ?, ?, ?)', [req.body.order_owner, req.body.order_product, req.body.order_amount, req.body.order_date, req.body.delivery_method, req.body.payment_method, req.body.order_status]);
+
+    const databaseResults = results[0];
+
+    console.log(results);
+    if (databaseResults.affectedRows > 0) {
+      res.send({
+        error: false,
+        stats: databaseResults,
+      });
+    } else {
+      throw Error('No results');
+    }
+    connect.end();
+  } catch (error) {
+    console.log(error);
+    res.send({
+      error: true,
+      stats: error,
+    });
+  }
+});
+app.get('/sql/products/', async (req, res) => {
+  const defaultlimit = 60;
+  const limit = Number(req.query.limit) || defaultlimit;
+
+  try {
+    const connect = await eshop.createConnection(eshopConfig);
+    const dbresponse = await connect.query('SELECT * FROM products LIMIT ?', [limit]);
+    // console.log(dbresponse[0]);
+    res.send(dbresponse[0]);
+    connect.end();
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send(JSON.stringify(error));
+  }
+});
+app.post('/sql/products', async (req, res) => {
+  console.log(req.body);
+  try {
+    const connect = await eshop.createConnection(eshopConfig);
+    const results = await connect.query('INSERT INTO products (product_barcode, product_name, product_VAT, product_purchase_prise, product_sales_prise, product_description, product_image, product_author, product_genre, publisher, pages, language, translator, year) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [req.body.product_barcode, req.body.product_name, req.body.product_VAT, req.body.product_purchase_prise, req.body.product_sales_prise, req.body.product_description, req.body.product_image, req.body.product_author, req.body.product_genre, req.body.publisher, req.body.pages, req.body.language, req.body.translator, req.body.year]);
+
+    const databaseResults = results[0];
+
+    console.log(results);
+    if (databaseResults.affectedRows > 0) {
+      res.send({
+        error: false,
+        stats: databaseResults,
+      });
+    } else {
+      throw Error('No results');
+    }
+    connect.end();
+  } catch (error) {
+    console.log(error);
+    res.send({
+      error: true,
+      stats: error,
+    });
   }
 });
 app.get('/sql/users/', async (req, res) => {
@@ -183,36 +306,10 @@ app.get('/sql', async (req, res) => {
     res.send(JSON.stringify(error));
   }
 });
-app.post('/sql/register', async (req, res) => {
-  console.log(req.body);
-  try {
-    const connect = await veterinary.createConnection(veterinaryConfig);
-    const results = await connect.query('INSERT INTO users (name, surname, age, email, pet_name, pet_age, password) VALUES (?, ?, ?, ?, ?, ?, ?)', [req.body.name, req.body.surname, req.body.age, req.body.phone, req.body.email, req.body.pet_name, req.body.pet_age, req.body.password]);
-
-    const databaseResults = results[0];
-
-    console.log(results);
-    if (databaseResults.affectedRows > 0) {
-      res.send({
-        error: false,
-        stats: databaseResults,
-      });
-    } else {
-      throw Error('No results');
-    }
-    connect.end();
-  } catch (error) {
-    console.log(error);
-    res.send({
-      error: true,
-      stats: error,
-    });
-  }
-});
 app.post('/sql/login', async (req, res) => {
   const { body: { email, password } } = req;
   try {
-    const connect = await veterinary.createConnection(veterinaryConfig);
+    const connect = await eshopConfig.createConnection(eshopConfig);
     const results = await connect.query('SELECT * FROM users where email = ?', [email]);
 
     const user = results[0][0];
