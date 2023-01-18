@@ -34,20 +34,29 @@
 body {
   margin: auto;
   background-color: white;
-  width: 40%;
+  width: 45%;
   background-image: url(https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg);
   }
-header {
+header.headerLogin {
   background: rgb(248, 234, 181);
   border-radius: 0.5rem;
   margin: 1rem auto;
   padding: 1rem;
   width: 85%;
   text-align: center;  
-  box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4);
+  box-shadow: 6px 6px 12px rgb(252, 228, 157);
   }
+header.headerRegistration {
+    background: rgb(248, 234, 181);
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 85%;
+    text-align: center;  
+    box-shadow: 6px 6px 12px rgb(252, 228, 157);
+    }
 .headerImg {
-      width: 15%;  
+      width: 30%;  
   }
 .headerTitle {
   font-weight: bold;
@@ -58,19 +67,18 @@ header {
   margin: 1rem auto;
   padding: 1rem;
   width: 85%;
-  text-align: left; 
-  box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4); 
-  }
+  text-align: center; 
+  box-shadow: 6px 6px 12px rgb(252, 228, 157); 
+   }
 .loginas0 {
       text-align: center; 
       font-weight: bold;
       font-size: 30px;   
   }
-fieldset {
+.usdata {
       margin: 1rem auto;
-      padding: 1rem;
-      width:35%;
-      
+      width: 35%;
+      padding: 7px;   
   }
 .loginParachraf {
   color: black;
@@ -159,34 +167,25 @@ table {
 .accounts {
       text-align: center;
   }
-footer{
-  background: rgb(248, 234, 181);
-      border-radius: 0.5rem;
-      margin-top: 300px;
-      padding: 1rem;
-      width: 85%;
-      text-align: center;  
-      box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4);
-  }
-  .footerImg{
+.footerImg{
       width: 20%;
              
   }
-  .shopfooter {
+.shopfooter {
       display: flex;
       justify-content: space-between;
   }
-  .booksData{
+.booksData{
       width: 12%;
   }
-  .productName {
+.productName {
       font-size: 30px;
 
   }
-  .productAuthor{
+.productAuthor{
       font-size: 20px;
   }
-  .productPrice {
+.productPrice {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
   }
@@ -196,3 +195,55 @@ footer{
       justify-content:flex-start;
       justify-content: space-around;
   }
+  .registrationData {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  input.usdata{
+      margin: 1px auto;
+      width:55%;
+      padding: 7px; 
+  }
+footer{
+    background: rgb(248, 234, 181);
+        border-radius: 0.5rem;
+        margin-top: 5px;
+        padding: 1rem;
+        width: 85%;
+        text-align: center;  
+        box-shadow: 6px 6px 12px rgb(252, 228, 157);
+    }
+  
+.footerLogin{
+    background: rgb(248, 234, 181);
+    border-radius: 0.5rem;
+    width: 85%;
+    text-align: center;  
+    box-shadow: 6px 6px 12px rgb(252, 228, 157);
+
+   }
+.footerRegistration{
+  background: rgb(248, 234, 181);
+  border-radius: 0.5rem;
+  width: 85%;
+  text-align: center;  
+  box-shadow: 6px 6px 12px rgb(252, 228, 157);
+   }
+.headerShop{
+  background: rgb(248, 234, 181);
+  border-radius: 0.5rem;
+  width: 95%;
+  text-align: center;  
+  box-shadow: 6px 6px 12px rgb(252, 228, 157);
+}
+.footerShop{
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 85%;
+    text-align: center;  
+    box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4);
+}
+.footerImg{
+    width: 20%;        
+}

@@ -309,12 +309,12 @@ app.get('/sql', async (req, res) => {
 app.post('/sql/login', async (req, res) => {
   const { body: { email, password } } = req;
   try {
-    const connect = await eshopConfig.createConnection(eshopConfig);
+    const connect = await eshop.createConnection(eshopConfig);
     const results = await connect.query('SELECT * FROM users where email = ?', [email]);
 
     const user = results[0][0];
 
-    if (user?.password === password) {
+    if (bcryptjs.compareSync(password, user?.password)) {
       const token = jwt.sign({ email, password }, SECRET_KEY);
       res.json({ token });
     } else {
