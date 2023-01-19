@@ -1,124 +1,106 @@
-
-.headerTitle {
-  font-weight: bold;
-  }
 .loginas {
   background: white;
   border-radius: 0.5rem;
   margin: 1rem auto;
   padding: 1rem;
   width: 85%;
-  text-align: left; 
-  box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4); 
-  }
+  text-align: left;
+  box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4);
+}
 .myLogin {
-      text-align: center; 
-      font-weight: bold;
-      font-size: 30px;   
-  }
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
 .loginParachraf {
   color: black;
   font-weight: bold;
-
-  }
+}
 a {
-      color: black;
-      text-decoration: underline;
-  }
+  color: black;
+  text-decoration: underline;
+}
 table {
-      padding-left: 40px;
-      padding-right: 40px;
-      padding-top: 10px;
-  }
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+}
 .groupData {
-      background: white;
-      margin: 1rem auto;
-      padding: 1rem;
-      width: 80%;
-      text-align: center; 
-      box-shadow: 6px 6px 12px rgba(76, 76, 76, 0.4); 
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
+  background: white;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  text-align: center;
+  box-shadow: 6px 6px 12px rgba(76, 76, 76, 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .groupTitle {
   font-weight: bold;
-  }
+}
 .delete-button {
   background-color: white;
   border-color: black;
   color: black;
-  }
+}
 .groupsTable {
-      width: 80%;
-      background: white;
-      border-radius: 0.5rem;
-      margin: 1rem auto;
-      padding: 1rem;
-      text-align: center; 
-      box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4); 
-  }
+  width: 80%;
+  background: white;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4);
+}
 .testas {
-      background: white;
-      margin: 1rem auto;
-      padding: 1rem;
-      width: 80%;
-      text-align: center; 
-      box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4); 
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;    
-  }
+  background: white;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  text-align: center;
+  box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .groupData a {
-      width: 25%;
-      display: flex;
-      flex-direction: column;
-  }
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
 .delete-button {
-      width: 40%;
-      text-align: center;
-  }
+  width: 40%;
+  text-align: center;
+}
 .accounts {
-      text-align: center;
-  }
-footer{
-      background: white;
-      border-radius: 0.5rem;
-      margin: 1rem auto;
-      padding: 1rem;
-      width: 85%;
-      text-align: center;  
-      box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4);
-  }
-  .footerImg{
-      width: 20%;
-             
-  }
-  .shopfooter {
-      display: flex;
-      justify-content: space-between;
-  }
-  .booksData{
-      width: 12%;
-  }
-  .productName {
-      font-size: 30px;
-
-  }
-  .productAuthor{
-      font-size: 20px;
-  }
-  .productPrice {
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-  }
-  .productForm {
-      max-width: 80%;
-      display: flex;
-      justify-content:flex-start;
-      justify-content: space-around;
-  }
+  text-align: center;
+}
+footer {
+  background: white;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  width: 85%;
+  text-align: center;
+  box-shadow: 6px 6px 12px rgba(179, 179, 177, 0.4);
+}
+.footerImg {
+  width: 20%;
+}
+.booksData {
+  width: 12%;
+}
+.productName {
+  font-size: 30px;
+}
+.productAuthor {
+  font-size: 20px;
+}
+.productPrice {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

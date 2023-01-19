@@ -68,10 +68,8 @@ export default function Login () {
     </div>
 
     <footer className="footerLogin">
-            <div class="footerLogin">
-                <div class="footerPharagrap">
-                    © 2023 UAB „House of Books“. Visos teisės saugomos. _1 v1.10
-                </div>
+            <div>
+                   <p> © 2023 UAB „House of Books“. Visos teisės saugomos. _1 v1.10 </p>
             </div>
         </footer>
 
