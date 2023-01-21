@@ -4,9 +4,22 @@ export default function Shop () {
 <div className="shopBody">
 
         <header className="headerShop">
+            <div className="userConnectionlinks">
+                    <img className="ltFlagImg" src="https://dovanos.lt/image/cache/data/Velevos/Lietuvos%20veliava-700x700.png" alt="" />                
+                    <img className="gbFlagImg" src="https://iconarchive.com/download/i109141/wikipedia/flags/GB-United-Kingdom-Flag.ico" alt="" />
+                    <img className="userConnectionImg" src="http://cdn.onlinewebfonts.com/svg/img_184513.png" alt="" />
+                    <a id="loginLink" href="http://localhost:3000/login" className="cboxElement"><span id="userIcon" className="icon-user"></span>Login</a>
+                    <img className="userConnectionImg" src="https://cdn-icons-png.flaticon.com/512/181/181546.png" alt="" />
+                    <a id="registerLink" href="http://localhost:3000/registration" rel="nofollow"><span className="icon-register"></span>Registration</a>
+            </div>
             <div className="headerData">
                 <img className="HeaderShopImg" src="https://knygunamaitenerifeje.lt/wp-content/uploads/2019/08/cropped-kn_002.1.01-1.png" alt="bookHome" class="headerImg"/>
-                <h1 className="headerTitle">Select a book</h1>
+                <div>
+                    <input type="search" name="searchparam" value="" placeholder="By name, author:"></input>
+                    <button class="buttonMain"><span class="icon-search"></span>Ieškoti</button>
+                    <span class="icon-search"></span>
+                </div>
+                <h1 className="headerTitle">SELECT A BOOK !</h1>
             </div>
         </header>
 
@@ -25,10 +38,10 @@ export default function Shop () {
                             <h4 className="productPrice">Kaina: 13.20 Eur</h4>
                         </div>
                         <div className="bookInfo">
-                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/erelisirangis_briedis.jpg?v3" alt=""/>
-                            <h2 className="productName">Erelis ir Angis</h2>
-                            <h3 className="productAuthor">Autorius: Loren D. Estleman</h3>
-                            <h4 className="productPrice">Kaina: 15.60 Eur</h4>
+                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/skambinktetoms_briedis.jpg?v3" alt=""/>
+                            <h2 className="productName">Skambink temomis</h2>
+                            <h3 className="productAuthor">Autorius: Ieva Driukienė</h3>
+                            <h4 className="productPrice">Kaina: 14.20 Eur</h4>
                         </div>
                         <div className="bookInfo">
                             <img className="productImg" src="https://www.briedis.lt/out/pictures/1/maisto_atlasas_virselis.png?v3" alt=""/>
@@ -37,10 +50,10 @@ export default function Shop () {
                             <h4 className="productPrice">Kaina: 4.85 Eur</h4>
                         </div>
                         <div className="bookInfo">
-                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/mano_pirmoji_enciklopedija_virselis.png?v3" alt=""/>
-                            <h2 className="productName">Pirmoji enciklopedija</h2>
+                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/pelkikaralien_briedis.jpg?v3" alt=""/>
+                            <h2 className="productName">Pelkių karalienė</h2>
                             <h3 className="productAuthor">Autorius: Kristina Tamulevičiūtė</h3>
-                            <h4 className="productPrice">Kaina: 11.40 Eur</h4>
+                            <h4 className="productPrice">Kaina: 19.40 Eur</h4>
                         </div>
             </div>
         </form>        
