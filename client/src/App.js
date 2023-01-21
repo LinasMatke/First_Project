@@ -6,6 +6,8 @@ import Orders from './components/Orders';
 import Product from './components/Product';
 import Registration from './components/Registration';
 import Shop from './components/Shop';
+import Password from './components/Password';
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
           <Route path='/orders' element={<Orders/>}/>
           <Route path='/product' element={<Product/>}/>
           <Route path='/registration' element={<Registration/>}/>
+          <Route path='/password' element={<Password/>}/>
         </Routes>
         </BrowserRouter>
       </main> 

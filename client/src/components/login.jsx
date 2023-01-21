@@ -64,6 +64,9 @@ export default function Login () {
             <div>
                 <p className="loginParachraf">Don't have an account? <a href="http://127.0.0.1:3000/registration">Registration</a></p>
             </div>
+            <div>
+                <p className="loginParachraf"><a href="http://127.0.0.1:3000/password">Forgot password?</a></p>
+            </div>
         
     </div>
 

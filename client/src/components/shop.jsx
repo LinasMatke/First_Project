@@ -19,10 +19,10 @@ export default function Shop () {
                             <h4 className="productPrice">Kaina: 15.60 Eur</h4>
                         </div>
                         <div className="bookInfo">
-                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/erelisirangis_briedis.jpg?v3" alt=""/>
-                            <h2 className="productName">Erelis ir Angis</h2>
-                            <h3 className="productAuthor">Autorius: Loren D. Estleman</h3>
-                            <h4 className="productPrice">Kaina: 15.60 Eur</h4>
+                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/mergaitmnesienoje_briedis.jpg?v3" alt=""/>
+                            <h2 className="productName">Mergaitė Menesienoje</h2>
+                            <h3 className="productAuthor">Autorius: Eglė Gabrilavičiūtė</h3>
+                            <h4 className="productPrice">Kaina: 13.20 Eur</h4>
                         </div>
                         <div className="bookInfo">
                             <img className="productImg" src="https://www.briedis.lt/out/pictures/1/erelisirangis_briedis.jpg?v3" alt=""/>
@@ -31,10 +31,16 @@ export default function Shop () {
                             <h4 className="productPrice">Kaina: 15.60 Eur</h4>
                         </div>
                         <div className="bookInfo">
-                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/erelisirangis_briedis.jpg?v3" alt=""/>
-                            <h2 className="productName">Erelis ir Angis</h2>
-                            <h3 className="productAuthor">Autorius: Loren D. Estleman</h3>
-                            <h4 className="productPrice">Kaina: 15.60 Eur</h4>
+                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/maisto_atlasas_virselis.png?v3" alt=""/>
+                            <h2 className="productName">Maisto atlasas</h2>
+                            <h3 className="productAuthor">Autorius: Ema Bernotaitė</h3>
+                            <h4 className="productPrice">Kaina: 4.85 Eur</h4>
+                        </div>
+                        <div className="bookInfo">
+                            <img className="productImg" src="https://www.briedis.lt/out/pictures/1/mano_pirmoji_enciklopedija_virselis.png?v3" alt=""/>
+                            <h2 className="productName">Pirmoji enciklopedija</h2>
+                            <h3 className="productAuthor">Autorius: Kristina Tamulevičiūtė</h3>
+                            <h4 className="productPrice">Kaina: 11.40 Eur</h4>
                         </div>
             </div>
         </form>        

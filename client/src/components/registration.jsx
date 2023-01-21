@@ -19,20 +19,24 @@ const handleRegistration = (e) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name, setName,
-                email, setEmail,
+                name: name,
+                email: email,
                 phone, setPhone,
-                buyer_address, setBuyer_address,
-                delivery_address, setDelivery_address,
-                city, setCity,
-                post_code, setPost_code,
-                password, setPassword
+                buyer_address: buyer_address,
+                delivery_address: delivery_address,
+                city: city,
+                post_code: post_code,
+                password: password
             })
         })
         .then(res => res.json())
         .then(data => {
             if (data.error.false) {
+                console.log('data')
                 navigate('/login');
+            }
+            if (data.error.true) {
+             <inputError className="text">User data or password were wrong</inputError>   
             }
         });
     }
@@ -52,19 +56,28 @@ const handleRegistration = (e) => {
                         <label className="loginas0">Fill registration data</label>
                     </div>
                         <div className="registrationData">  
-                    <input type="text" placeholder="Name, Surname" id="full_name" className="usdata" name="full_name"/>
-                    <input type="email" placeholder="Email: name@gmail.com" id="email" className="usdata" name="email"/>
-                    <input type="text" placeholder="Phone number +370 000 00000" id="phone" className="usdata" name="phone"/>
-                    <input type="text" placeholder="Invoice address:" id="buyer_address" className="usdata" name="invoiceAddress"/>
-                    <input type="text" placeholder="Delivery address:" id="delivery_address" className="usdata" name="deliveryAddress"/>
-                    <input type="text" placeholder="City, Country:" id="city" className="usdata" name="country"/>
-                    <input type="text" placeholder="Post code:" id="post_code" className="usdata" name="postCode"/>
-                    <input type="text" placeholder="Password" id="user_password" className="usdata" name="password"/>
+                    <input type="text" placeholder="Name, Surname" id="full_name" className="usdata" name="name"
+                    onChange={(event, element) => {setName(event.target.value)}}/>
+                    <input type="email" placeholder="Email: name@gmail.com" id="email" className="usdata" name="email"
+                    onChange={(event, element) => {setEmail(event.target.value)}}/>
+                    <input type="text" placeholder="Phone number +370 000 00000" id="phone" className="usdata" name="phone"
+                    onChange={(event, element) => {setPhone(event.target.value)}}/>
+                    <input type="text" placeholder="Invoice address:" id="buyer_address" className="usdata" name="invoiceAddress"
+                    onChange={(event, element) => {setBuyer_address(event.target.value)}}/>
+                    <input type="text" placeholder="Delivery address:" id="delivery_address" className="usdata" name="deliveryAddress"
+                    onChange={(event, element) => {setDelivery_address(event.target.value)}}/>
+                    <input type="text" placeholder="City, Country:" id="city" className="usdata" name="country"
+                    onChange={(event, element) => {setCity(event.target.value)}}/>
+                    <input type="text" placeholder="Post code:" id="post_code" className="usdata" name="postCode"
+                    onChange={(event, element) => {setPost_code(event.target.value)}}/>
+                    <input type="text" placeholder="Password" id="user_password" className="usdata" name="password"
+                    onChange={(event, element) => { setPassword(event.target.value)}}/>
                 </div>
                         <div>
-                            <input className="button-primary" type="submit" value="Register" onClick={ (e) => {
+                            <input className="button-primary" type="submit" value="Register"
+                                onClick={ (e) => {
                                 handleRegistration(e)
-                                // navigate('/login');
+                                navigate('/login');
                             } }/>
                         </div>   
         
