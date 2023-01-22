@@ -1,4 +1,38 @@
+// import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
 export default function Shop() {
+  // const navigate = useNavigate();
+  // const [product_image, setProduct_image] = useState("");
+  // const [product_name, setProduct_name] = useState("");
+  // const [product_author, setProduct_author] = useState("");
+  // const [product_sales_prise, setProduct_sales_prise] = useState("");
+
+  // const handleProductView = (e) => {
+  //   e.preventDefault();
+  //   fetch("http://localhost:8000/sql/products", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       product_image: product_image.value,
+  //       product_name: product_name.value,
+  //       product_author: product_author.value,
+  //       product_sales_prise: setProduct_sales_prise,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.error.false) {
+  //         console.log("data");
+  //       }
+  //       if (data.error.true) {
+  //         <inputError className="text">
+  //           User data or password were wrong
+  //         </inputError>;
+  //       }
+  //     });
+  // };
   return (
     <div className="shopBody">
       <header className="headerShop">
@@ -52,16 +86,15 @@ export default function Shop() {
                 href="http://localhost:3000/privateRulls"
                 className="userRulls1"
               >
-                <span id="userRulls" className="userRulls"></span>Privatumo
-                taisyklės
+                <span id="userRulls" className="userRulls"></span>Privacy policy
               </a>
               <a
                 id="privateRulls"
                 href="http://localhost:3000/purchaseRulls"
                 className="userRulls2"
               >
-                <span id="userRulls" className="userRulls"></span>Pirkimo
-                taisyklės
+                <span id="userRulls" className="userRulls"></span>Procurement
+                rulls
               </a>
             </div>
             <input
@@ -91,7 +124,7 @@ export default function Shop() {
               </a>
             </div>
           </div>
-          <h1 className="headerTitle">Rinkinės norimą knygą !</h1>
+          <h1 className="headerTitle">CHOOSE THE BOOK YOU WANT !</h1>
         </div>
       </header>
 

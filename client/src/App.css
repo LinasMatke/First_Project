@@ -403,3 +403,12 @@ div.footerImg:hover {
 .searchIcon {
   width: 10%;
 }
+.passwordBody {
+  background: rgb(248, 234, 181);
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 40%;
+  text-align: center;
+  box-shadow: 6px 6px 12px rgb(252, 228, 157);
+}
