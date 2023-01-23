@@ -21,7 +21,7 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         if (data.token) {
-          localStorage.setItem("token", data.token)
+          localStorage.setItem("token", data.token);
           navigate("/");
         }
       });

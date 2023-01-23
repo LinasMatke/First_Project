@@ -235,7 +235,7 @@ table {
 }
 .productName {
   color: black;
-  font-size: 25px;
+  font-size: 15px;
   text-align: center;
   margin-left: 10px;
 }
@@ -248,16 +248,16 @@ table {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  margin-left: 10px;
+  margin-left: 8px;
   text-align: center;
 }
 .productImg {
-  width: 45%;
+  max-width: 30%;
   margin-left: 10px;
   margin-top: 10px;
   border-radius: 5px;
   box-shadow: 5px 5px 5px 5px;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 img.productImg:hover {
   transition: color 0.5s ease-in-out;
@@ -308,6 +308,7 @@ input.usdata {
   padding: 7px;
   border-radius: 0.5rem;
   box-shadow: grey 5px 5px 5px;
+  border-color: rgb(248, 234, 181);
 }
 .buttonMain {
   background-color: transparent;

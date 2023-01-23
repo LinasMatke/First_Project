@@ -1,5 +1,15 @@
+import { useState } from "react";
+import { useEffect } from "react";
+
 export default function Shop() {
-  
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/sql/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
   return (
     <div className="shopBody">
       <header className="headerShop">
@@ -63,11 +73,13 @@ export default function Shop() {
                 <span id="userRulls" className="userRulls"></span>Procurement
                 rulls
               </a>
-              <a className="userRulls3"
+              <a
+                className="userRulls3"
                 id="addNewBook"
                 href="http://localhost:3000/product"
               >
-                <span id="userRulls" className="userRulls3"></span>ADD NEW BOOK !
+                <span id="userRulls" className="userRulls3"></span>ADD NEW BOOK
+                !
               </a>
             </div>
             <input
@@ -77,9 +89,9 @@ export default function Shop() {
               value=""
               placeholder="By name, author"
             ></input>
-            <button class="buttonMain">
-              <span class="icon-search"></span>Ieškoti
-              <span class="icon-search"> </span>
+            <button className="buttonMain">
+              <span className="icon-search"></span>Ieškoti
+              <span className="icon-search"> </span>
             </button>
             <div className="shopBag">
               <a
@@ -92,8 +104,8 @@ export default function Shop() {
                   src="https://freepngimg.com/save/170186-basket-free-download-image/877x585"
                   alt=""
                 />
-                <span class="icon-cart-empty"></span>0,00 €
-                <span class="icon-down"></span>
+                <span className="icon-cart-empty"></span>0,00 €
+                <span className="icon-down"></span>
               </a>
             </div>
           </div>
@@ -103,56 +115,24 @@ export default function Shop() {
 
       <form className="formShop">
         <div className="booksData">
-          <div className="bookInfo">
-            <img
-              className="productImg" id="productImg"
-              src="https://www.briedis.lt/out/pictures/1/erelisirangis_briedis.jpg?v3"
-              alt=""
-            />
-            <h2 className="productName" id="productName">Erelis ir Angis</h2>
-            <h3 className="productAuthor" id="productAuthor">Autorius: Loren D. Estleman</h3>
-            <h4 className="productPrice" id="productSalesPrise">Kaina: 15.60 Eur</h4>
-          </div>
-          <div className="bookInfo">
-            <img
-              className="productImg"
-              src="https://www.briedis.lt/out/pictures/1/mergaitmnesienoje_briedis.jpg?v3"
-              alt=""
-            />
-            <h2 className="productName">Mergaitė Menesienoje</h2>
-            <h3 className="productAuthor">Autorius: Eglė Gabrilavičiūtė</h3>
-            <h4 className="productPrice">Kaina: 13.20 Eur</h4>
-          </div>
-          <div className="bookInfo">
-            <img
-              className="productImg"
-              src="https://www.briedis.lt/out/pictures/1/skambinktetoms_briedis.jpg?v3"
-              alt=""
-            />
-            <h2 className="productName">Skambink temomis</h2>
-            <h3 className="productAuthor">Autorius: Ieva Driukienė</h3>
-            <h4 className="productPrice">Kaina: 14.20 Eur</h4>
-          </div>
-          <div className="bookInfo">
-            <img
-              className="productImg"
-              src="https://www.briedis.lt/out/pictures/1/maisto_atlasas_virselis.png?v3"
-              alt=""
-            />
-            <h2 className="productName">Maisto atlasas</h2>
-            <h3 className="productAuthor">Autorius: Ema Bernotaitė</h3>
-            <h4 className="productPrice">Kaina: 4.85 Eur</h4>
-          </div>
-          <div className="bookInfo">
-            <img
-              className="productImg"
-              src="https://www.briedis.lt/out/pictures/1/pelkikaralien_briedis.jpg?v3"
-              alt=""
-            />
-            <h2 className="productName">Pelkių karalienė</h2>
-            <h3 className="productAuthor">Autorius: Kristina Tamulevičiūtė</h3>
-            <h4 className="productPrice">Kaina: 19.40 Eur</h4>
-          </div>
+          {products.map((product) => {
+            return (
+              <div key={product.product_code} className="bookInfo">
+                <img
+                  className="productImg"
+                  src={product.product_image}
+                  alt=""
+                />
+                <h2 className="productName">{product.product_name}</h2>
+                <h3 className="productAuthor">
+                  Autorius: {product.product_author}
+                </h3>
+                <h4 className="productPrice">
+                  Kaina: {product.product_sales_prise} Eur
+                </h4>
+              </div>
+            );
+          })}
         </div>
       </form>
 
