@@ -10,6 +10,7 @@ import Password from "./components/Password";
 import PrivateRulls from "./components/PrivateRulls";
 import PurchaseRulls from "./components/PurchaseRulls";
 import Basket from "./components/Basket";
+import Invoice from "./components/Invoice";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/privaterulls" element={<PrivateRulls />} />
             <Route path="/purchaserulls" element={<PurchaseRulls />} />
             <Route path="/basket" element={<Basket />} />
+            <Route path="/invoice" element={<Invoice />} />
           </Routes>
         </BrowserRouter>
       </main>

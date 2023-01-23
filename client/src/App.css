@@ -412,3 +412,13 @@ div.footerImg:hover {
   text-align: center;
   box-shadow: 6px 6px 12px rgb(252, 228, 157);
 }
+.userRulls3 {
+  text-align: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size:large;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-decoration:none;
+  }
+

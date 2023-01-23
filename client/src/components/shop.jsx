@@ -1,38 +1,5 @@
-// import { useNavigate } from "react-router-dom";
-// import { useState } from "react";
 export default function Shop() {
-  // const navigate = useNavigate();
-  // const [product_image, setProduct_image] = useState("");
-  // const [product_name, setProduct_name] = useState("");
-  // const [product_author, setProduct_author] = useState("");
-  // const [product_sales_prise, setProduct_sales_prise] = useState("");
-
-  // const handleProductView = (e) => {
-  //   e.preventDefault();
-  //   fetch("http://localhost:8000/sql/products", {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       product_image: product_image.value,
-  //       product_name: product_name.value,
-  //       product_author: product_author.value,
-  //       product_sales_prise: setProduct_sales_prise,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data.error.false) {
-  //         console.log("data");
-  //       }
-  //       if (data.error.true) {
-  //         <inputError className="text">
-  //           User data or password were wrong
-  //         </inputError>;
-  //       }
-  //     });
-  // };
+  
   return (
     <div className="shopBody">
       <header className="headerShop">
@@ -96,6 +63,12 @@ export default function Shop() {
                 <span id="userRulls" className="userRulls"></span>Procurement
                 rulls
               </a>
+              <a className="userRulls3"
+                id="addNewBook"
+                href="http://localhost:3000/product"
+              >
+                <span id="userRulls" className="userRulls3"></span>ADD NEW BOOK !
+              </a>
             </div>
             <input
               className="searchBtn"
@@ -132,13 +105,13 @@ export default function Shop() {
         <div className="booksData">
           <div className="bookInfo">
             <img
-              className="productImg"
+              className="productImg" id="productImg"
               src="https://www.briedis.lt/out/pictures/1/erelisirangis_briedis.jpg?v3"
               alt=""
             />
-            <h2 className="productName">Erelis ir Angis</h2>
-            <h3 className="productAuthor">Autorius: Loren D. Estleman</h3>
-            <h4 className="productPrice">Kaina: 15.60 Eur</h4>
+            <h2 className="productName" id="productName">Erelis ir Angis</h2>
+            <h3 className="productAuthor" id="productAuthor">Autorius: Loren D. Estleman</h3>
+            <h4 className="productPrice" id="productSalesPrise">Kaina: 15.60 Eur</h4>
           </div>
           <div className="bookInfo">
             <img
